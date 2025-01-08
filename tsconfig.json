@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", //paar que se cree en el directorio
+        "rootDir": "./src", // de donde se jalaran los archivos que se crearan
+        "lib": [
+            "ESNext"
+        ], // que version de js usar
+        "target": "ESNext", // que version de js usar
+        "moduleResolution": "NodeNext", // que tipo de modulo usar
+        "module":"NodeNext",
+        "strict": false, //el true no permite ningun any
+        "sourceMap": true, // mucha documentacion interna de explicacion de errores
+        "esModuleInterop": true,
+        "declaration": true, // crea los archivos de definicion (index.d.ts, index.js.map, etc(.dts y js.map)
+        "experimentalDecorators": true, 
+        "emitDecoratorMetadata": true
+        
+    },
+    "include":["src/**/*.ts"],// tomar todos loas archivos ts
+  //  "exclude":["src/**/*.test.ts"] // exlcude all  archvivos .test.ts
+}
