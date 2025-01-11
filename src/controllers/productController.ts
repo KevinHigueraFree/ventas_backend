@@ -8,7 +8,7 @@ export class productController {
             order: [
                 ['id', 'DESC']
             ],
-            attributes: { exclude: ['createdAt', 'updatedAt'] }
+           
         })
         res.json({ data: products })
     }
@@ -23,7 +23,7 @@ export class productController {
             try {
 
                 const product = await Product.create(req.body)
-                res.status(201).json({ data: product })
+                res.status(201).json({message:'Se creó el producto', data: product })
 
             } catch (error) {
                 res.status(500).json({ error: "Hubo un error" })

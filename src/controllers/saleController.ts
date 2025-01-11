@@ -47,8 +47,9 @@ export class saleController {
             try {
                 const sale = await Sale.create(req.body)
                 sale.userId = req.user.id
-                await sale.save()
-                res.status(201).json('Venta creada correctamente')
+                const saleSaved= await sale.save()
+                console.log(saleSaved)
+                res.status(201).json({message:'Venta creada correctamente',sale:saleSaved})
 
             } catch (error) {
 

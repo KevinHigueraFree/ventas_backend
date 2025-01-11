@@ -17,6 +17,11 @@ class Sale extends Model {
     })
     declare date: Date
 
+/*     @Column({
+        type:DataType.FLOAT(6)
+    })
+    declare total: number */
+
     @ForeignKey(() => User)
     @Column
     declare userId: number;
