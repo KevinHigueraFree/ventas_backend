@@ -31,7 +31,7 @@ export const validateProductByID =
 
 export const validateProductInput =
     async (req: Request, res: Response, next: NextFunction) => {
-
+   
         await body('name')
             .notEmpty().withMessage('Falta el nombre')
             .run(req)
@@ -43,8 +43,6 @@ export const validateProductInput =
             .run(req)
 
         next()
-
-
     }
 
 export const validateProductExists = async (req: Request, res: Response, next: NextFunction) => {
@@ -52,14 +50,13 @@ export const validateProductExists = async (req: Request, res: Response, next: N
 
         const { productId } = req.params.productId ? req.params : req.body;
         const product = await Product.findByPk(productId)
-
         if (!product) {
             res.status(404).json({
                 error: 'Producto no encontrado'
             })
             return
         }
-
+        
         req.product = product
         next()
 

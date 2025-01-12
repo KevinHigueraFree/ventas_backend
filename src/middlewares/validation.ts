@@ -7,6 +7,7 @@ export const handleInputErrors = (req: Request, res: Response, next: NextFunctio
   // obtiene el resultado de la validacion
   let result = validationResult(req)
   if (!result.isEmpty()) {
+
     res.status(400).json({ errors: result.array() })
     return
   }
